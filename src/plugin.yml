@@ -1,0 +1,43 @@
+name: HyperWarp
+version: 1.0.0
+author: SciDev
+api-version: 1.16
+main: me.scidev.hyperwarp.HyperWarp
+commands:
+   setwarp:
+      description: Define a new warp destination.
+      permission: hyperwarp.commands.setwarp.use
+      aliases: ["sw"]
+   editwarp:
+      description: Modify an existing warp.
+      permission: hyperwarp.commands.editwarp.use
+      aliases: ["ew"]
+   delwarp:
+      description: Remove an existing warp.
+      permission: hyperwarp.commands.delwarp.use
+      aliases: ["dw"]
+   warp:
+      description: Teleport to a warp.
+      permission: hyperwarp.commands.warp.use
+      aliases: ["w"]
+   getwarp:
+      description: Get information about a warp.
+      permission: hyperwarp.commands.getwarp.use
+      aliases: ["warpinfo","wi","gw"]
+   listwarps:
+      description: Remove an existing warp.
+      permission: hyperwarp.commands.listwarps.use
+      aliases: ["warps","lw"]
+permissions:
+   hyperwarp.commands.listwarps.use:
+      default: true
+   hyperwarp.commands.warp.use:
+      default: true
+   hyperwarp.commands.getwarp.use:
+      default: true
+   hyperwarp.commands.setwarp.use:
+      default: op
+   hyperwarp.commands.editwarp.use:
+      default: op
+   hyperwarp.commands.delwarp.use:
+      default: op

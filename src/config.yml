@@ -1,0 +1,31 @@
+i10n: # Localization 
+   noPermission: "&cYou do not have permission to do that!"
+   warps:
+      noDescription: "(no description)"
+      permissionUnnecessary: "none"
+      list:
+         success: "&9List of warps: %WARPS%"
+         row: "['%NAME%' at (%X%, %Y%, %Z%) in world '%WORLD%']"
+         separator: ", "
+         empty: "(no warps)" 
+         error: 
+            commandSyntax: "&cInvalid usage: '/%ALIAS%' has no arguments."
+      get:
+         success: "&9Info for '%NAME%':\n - destination: (%X%, %Y%, %Z%)\n - world: '%WORLD%'\n - required permission: %PERMISSION%\n - description: %DESCRIPTION%"
+         error: 
+            commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name>"
+            noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
+      del:
+         success: "&9Deleted warp '%NAME%'."
+         error: 
+            commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name>"
+            noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
+      warp:
+         success: "&aWarped to '%NAME%' at (%X%, %Y%, %Z%) in world '%WORLD%'."
+         error: 
+            commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name>"
+            noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
+            noPermission: "&cYou do not have permission to warp to '%NAME%'!"
+            isConsole: "&cThe console cannot use this command!"
+         
+warps: []
