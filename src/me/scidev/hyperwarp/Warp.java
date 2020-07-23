@@ -9,7 +9,8 @@ public class Warp {
 	public String name;
 	public String description;
 	public Location destination;
-	public Permission permission;
+	private Permission permission;
+	private String permissionName;
 	
 	public Warp(String name, Location destination) {
 		this.name = name;
@@ -19,6 +20,14 @@ public class Warp {
 	}
 	public Warp setPermission(Permission permission) {
 		this.permission = permission;
+		if (permission != null)
+			this.permissionName = permission.getName();
+		else
+			this.permissionName = null;
+		return this;
+	}
+	public Warp setPermission(String permission) {
+		this.permissionName = permission;
 		return this;
 	}
 	public Warp setDescription(String description) {
@@ -26,9 +35,15 @@ public class Warp {
 		return this;
 	}
 	
+	public Permission getPermission() {
+		if (this.permission == null && this.permissionName != null)
+			this.permission = HyperWarp.instance.getServer().getPluginManager().getPermission(this.permissionName);
+		return this.permission;
+	}
+	
 	public boolean teleportPlayer(Player player) {
 		if (this.permission != null)
-			if (!player.hasPermission(this.permission))
+			if (!player.hasPermission(this.getPermission()))
 				return false;
 		
 		player.teleport(this.destination);

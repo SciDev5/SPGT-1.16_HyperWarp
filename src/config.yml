@@ -1,5 +1,6 @@
 i10n: # Localization 
    noPermission: "&cYou do not have permission to do that!"
+   couldNotLoadWarp: "Warp %WARPNAME% could not be loaded, it will be discarded!"
    warps:
       noDescription: "(no description)"
       permissionUnnecessary: "none"
@@ -11,7 +12,7 @@ i10n: # Localization
          error: 
             commandSyntax: "&cInvalid usage: '/%ALIAS%' has no arguments."
       get:
-         success: "&9Info for '%NAME%':\n - destination: (%X%, %Y%, %Z%)\n - world: '%WORLD%'\n - required permission: %PERMISSION%\n - description: %DESCRIPTION%"
+         success: "&9Info for '%NAME%':\n - destination: (%X%, %Y%, %Z%)\n - rotation: (pitch: %PITCH%, yaw: %YAW%)\n - world: '%WORLD%'\n - required permission: %PERMISSION%\n - description: %DESCRIPTION%"
          error: 
             commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name>"
             noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
@@ -57,5 +58,3 @@ i10n: # Localization
             noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
             noPermission: "&cYou do not have permission to warp to '%NAME%'!"
             isConsole: "&cThe console cannot use this command!"
-         
-warps: []

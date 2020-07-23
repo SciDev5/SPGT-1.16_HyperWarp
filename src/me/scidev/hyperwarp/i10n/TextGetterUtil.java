@@ -34,8 +34,8 @@ public class TextGetterUtil {
 		textMap.put("YAW",floatToFixed(warp.destination.getYaw(),3));
 		textMap.put("PITCH",floatToFixed(warp.destination.getPitch(),3));
 		textMap.put("WORLD",warp.destination.getWorld().getName());
-		if (warp.permission == null) textMap.put("PERMISSION",getTextSection("warps.permissionUnnecessary"));
-		else textMap.put("PERMISSION",warp.permission.getName());
+		if (warp.getPermission() == null) textMap.put("PERMISSION",getTextSection("warps.permissionUnnecessary"));
+		else textMap.put("PERMISSION",warp.getPermission().getName());
 		return getTextSectionWithOtherText(configNodeAddress, textMap);
 	}
 	public static String getTextSectionWithCommandAlias(String configNodeAddress, String alias) {
