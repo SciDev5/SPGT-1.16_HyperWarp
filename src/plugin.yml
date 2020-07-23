@@ -13,7 +13,7 @@ commands:
       description: Modify an existing warp.
       permission: hyperwarp.commands.editwarp.use
       aliases: ["ew"]
-      usage: "\n - /<command> <warp name> rename <new name>\n - /<command> <warp name> location <x> <y> <z>\n - /<command> <warp name> rotation <pitch> <yaw>\n - /<command> <warp name> world <world>\n - /<command> <warp name> permission <permission>\n - /<command> <warp name> description <description>"
+      usage: "\n - /<command> <warp name> rename <new name>\n - /<command> <warp name> position <x> <y> <z>\n - /<command> <warp name> rotation <pitch> <yaw>\n - /<command> <warp name> world <world>\n - /<command> <warp name> permission <permission>\n - /<command> <warp name> description <description>"
    delwarp:
       description: Remove an existing warp.
       permission: hyperwarp.commands.delwarp.use
