@@ -155,7 +155,7 @@ public class SetWarpCommand implements CommandExecutor, TabCompleter {
 	}
 	
 	private Location parseLocation(Player sender, String commandAlias, String xstr, String ystr, String zstr, String pitchstr, String yawstr, String worldstr) {
-		double x,y,z; float pitch=0f,yaw=0f; World world=sender.getWorld();
+		double x,y,z; float pitch=0f,yaw=0f; World world=null;
 		try {
 			x = Double.parseDouble(xstr);
 			y = Double.parseDouble(ystr);
@@ -164,6 +164,7 @@ public class SetWarpCommand implements CommandExecutor, TabCompleter {
 				pitch = Float.parseFloat(pitchstr);
 			if (yawstr != null)
 				yaw = Float.parseFloat(yawstr);
+			world = sender.getWorld();
 		} catch (NumberFormatException e) {
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', TextGetterUtil.getTextSectionWithCommandAlias("warps.set.error.commandSyntax", commandAlias)));
 			return null;
