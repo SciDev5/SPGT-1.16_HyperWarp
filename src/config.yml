@@ -17,11 +17,32 @@ i10n: # Localization
             noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
             commandSyntax: "&cInvalid usage: '/%ALIAS%' has no arguments."
       set:
-         success: "&9Created warp '%NAME%':\n - destination: (%X%, %Y%, %Z%)\n - world: '%WORLD%'\n - required permission: %PERMISSION%\n - description: %DESCRIPTION%"
+         success: "&9Created warp '%NAME%':\n - destination: (%X%, %Y%, %Z%)\n - rotation: (pitch: %PITCH%, yaw: %YAW%)\n - world: '%WORLD%'\n - required permission: %PERMISSION%\n - description: %DESCRIPTION%"
          error: 
             commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name> [x] [y] [z] [pitch] [yaw] [world] [permissionNode] [description... ]"
             warpNameTaken: "&cThere already warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
             isConsole: "&cConsole cannot set a warp with implied coordinates; must have (x,y,z), (pitch,yaw), and world arguments."
+            worldNotFound: "&cWorld not found."
+            permissionInvalid: "&6Permission node not found, defaulting to none."
+      edit:
+         success: 
+            name: "&9Renamed warp to '%NAME%'."
+            position: "&9Destination of '%NAME%' is now (%X%, %Y%, %Z%)."
+            rotation: "&9Destination look direction of '%NAME%' is now (pitch: %PITCH%, yaw: %YAW%)."
+            world: "&9Destination world of '%NAME%' is now '%WORLD%'."
+            permission: "&9Teleport permission of '%NAME%' is now '%PERMISSION%'."
+            description: "&9Description of '%NAME%' is now '%DESCRIPTION%'"
+         error: 
+            commandSyntax:
+               base: "&cInvalid usage: try one of the following:\n - /%ALIAS% <warp name> rename <new name>\n - /%ALIAS% <warp name> position <x> <y> <z>\n - /%ALIAS% <warp name> rotation <pitch> <yaw>\n - /%ALIAS% <warp name> world <world>\n - /%ALIAS% <warp name> permission <permission>\n - /%ALIAS% <warp name> description <description>"
+               name: "&cInvalid usage: try /%ALIAS% rename <new name>"
+               position: "&cInvalid usage: try /%ALIAS% position <x> <y> <z>"
+               rotation: "&cInvalid usage: try /%ALIAS% rotation <pitch> <yaw>"
+               world: "&cInvalid usage: try /%ALIAS% world <world>"
+               permission: "&cInvalid usage: try /%ALIAS% permission <permission>"
+               description: "&cInvalid usage: try /%ALIAS% position <description... >"
+            noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
+            warpNameTaken: "&cThere already warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
             worldNotFound: "&cWorld not found."
             permissionInvalid: "&6Permission node not found, defaulting to none."
       del:

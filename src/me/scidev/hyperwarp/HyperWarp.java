@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.scidev.hyperwarp.commands.DelWarpCommand;
 import me.scidev.hyperwarp.commands.DoWarpCommand;
+import me.scidev.hyperwarp.commands.EditWarpCommand;
 import me.scidev.hyperwarp.commands.GetWarpCommand;
 import me.scidev.hyperwarp.commands.ListWarpsCommand;
 import me.scidev.hyperwarp.commands.SetWarpCommand;
@@ -45,12 +46,14 @@ public class HyperWarp extends JavaPlugin {
 		getServer().getPluginCommand("warp").setExecutor(new DoWarpCommand());
 		getServer().getPluginCommand("delwarp").setExecutor(new DelWarpCommand());
 		getServer().getPluginCommand("setwarp").setExecutor(new SetWarpCommand());
+		getServer().getPluginCommand("editwarp").setExecutor(new EditWarpCommand());
 		
 		getServer().getPluginCommand("listwarps").setPermissionMessage(TextGetterUtil.getTextSection("noPermission"));
 		getServer().getPluginCommand("getwarp").setPermissionMessage(TextGetterUtil.getTextSection("noPermission"));
 		getServer().getPluginCommand("warp").setPermissionMessage(TextGetterUtil.getTextSection("noPermission"));
 		getServer().getPluginCommand("delwarp").setPermissionMessage(TextGetterUtil.getTextSection("noPermission"));
 		getServer().getPluginCommand("setwarp").setPermissionMessage(TextGetterUtil.getTextSection("noPermission"));
+		getServer().getPluginCommand("editwarp").setPermissionMessage(TextGetterUtil.getTextSection("noPermission"));
 	}
 	
 	public static Warp getWarpByName(String name) {
