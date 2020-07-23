@@ -28,11 +28,11 @@ public class TextGetterUtil {
 			textMap.put("DESCRIPTION",warp.description);
 		else 
 			textMap.put("DESCRIPTION",getTextSection("warps.noDescription"));
-		textMap.put("X",Double.toString(warp.destination.getX()));
-		textMap.put("Y",Double.toString(warp.destination.getY()));
-		textMap.put("Z",Double.toString(warp.destination.getZ()));
-		textMap.put("YAW",Float.toString(warp.destination.getYaw()));
-		textMap.put("PITCH",Float.toString(warp.destination.getPitch()));
+		textMap.put("X",doubleToFixed(warp.destination.getX(),3));
+		textMap.put("Y",doubleToFixed(warp.destination.getY(),3));
+		textMap.put("Z",doubleToFixed(warp.destination.getZ(),3));
+		textMap.put("YAW",floatToFixed(warp.destination.getYaw(),3));
+		textMap.put("PITCH",floatToFixed(warp.destination.getPitch(),3));
 		textMap.put("WORLD",warp.destination.getWorld().getName());
 		if (warp.permission == null) textMap.put("PERMISSION",getTextSection("warps.permissionUnnecessary"));
 		else textMap.put("PERMISSION",warp.permission.getName());
@@ -42,5 +42,12 @@ public class TextGetterUtil {
 		Map<String, String> textMap = new HashMap<>();
 		textMap.put("ALIAS",alias);
 		return getTextSectionWithOtherText(configNodeAddress, textMap);
+	}
+	
+	public static String doubleToFixed(double n, int digits) {
+		return String.format("%."+digits+"f", n);
+	}
+	public static String floatToFixed(float n, int digits) {
+		return String.format("%."+digits+"f", n);
 	}
 }

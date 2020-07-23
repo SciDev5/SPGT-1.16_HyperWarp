@@ -15,6 +15,15 @@ i10n: # Localization
          error: 
             commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name>"
             noSuchWarp: "&cThere is no warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
+            commandSyntax: "&cInvalid usage: '/%ALIAS%' has no arguments."
+      set:
+         success: "&9Created warp '%NAME%':\n - destination: (%X%, %Y%, %Z%)\n - world: '%WORLD%'\n - required permission: %PERMISSION%\n - description: %DESCRIPTION%"
+         error: 
+            commandSyntax: "&cInvalid usage: try /%ALIAS% <warp name> [x] [y] [z] [pitch] [yaw] [world] [permissionNode] [description... ]"
+            warpNameTaken: "&cThere already warp called '%WARPNAME%'! (Do /listwarps for a list of warps)"
+            isConsole: "&cConsole cannot set a warp with implied coordinates; must have (x,y,z), (pitch,yaw), and world arguments."
+            worldNotFound: "&cWorld not found."
+            permissionInvalid: "&6Permission node not found, defaulting to none."
       del:
          success: "&9Deleted warp '%NAME%'."
          error: 
